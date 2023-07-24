@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id = "@+id/logout"
+        android:icon = "@drawable/btn_like"
+        android:title = "로그아웃" />
+    <item
+        android:id = "@+id/edit_profile"
+        android:icon = "@drawable/btn_like"
+        android:title = "계정 정보 수정"/>
+
+</menu>
