@@ -46,25 +46,6 @@
         android:src="@drawable/user_profile_ex"
         app:layout_constraintTop_toBottomOf="@id/upload_photo_top" />
 
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/edit_textinputlayout"
-        android:layout_alignParentRight="true"
-        app:layout_constraintTop_toBottomOf="@id/upload_selected_image"
-        app:layout_constraintStart_toStartOf="parent"
-        android:layout_margin="7dp"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-
-        <EditText
-            android:gravity="top"
-            android:id="@+id/addphoto_edit_edittext"
-            android:hint="Explains"
-            android:textColor="@color/white"
-            android:layout_width="match_parent"
-            android:layout_height="100dp" />
-    </com.google.android.material.textfield.TextInputLayout>
-
-
     <Button
         android:id="@+id/btn_upload_library"
         android:layout_width="wrap_content"
