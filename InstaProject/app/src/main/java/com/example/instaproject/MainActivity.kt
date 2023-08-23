@@ -3,6 +3,7 @@ package com.example.instaproject
 import android.os.Bundle
 import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
+import androidx.drawerlayout.widget.DrawerLayout
 import androidx.fragment.app.Fragment
 import com.example.instaproject.R
 import com.example.instaproject.databinding.ActivityNaviBinding // View Binding 추가
@@ -12,10 +13,12 @@ import com.example.instaproject.navigation.MyPageFragment
 import com.example.instaproject.navigation.NotificationsFragment
 import com.example.instaproject.navigation.SearchFragment
 import com.google.android.material.bottomnavigation.BottomNavigationView
+import com.google.android.material.navigation.NavigationView
 
 class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityNaviBinding // View Binding 변수 추가
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

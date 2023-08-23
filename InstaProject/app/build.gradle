@@ -4,6 +4,9 @@ plugins {
     id("com.google.gms.google-services")
 }
 
+Properties properties = new Properties()
+properties.load(project.rootProject.file('local.properties').newDataInputStream())
+
 android {
     namespace 'com.example.instaproject'
     compileSdk 33
@@ -16,10 +19,15 @@ android {
         versionName "1.0"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+
+        buildConfigField "String", "KAKAO_NATIVE_APP_KEY", properties['kakao_native_app_key']
+        resValue "string", "kakao_oauth_host", properties['kakao_oauth_host']
     }
     buildFeatures {
+        buildConfig = true
         viewBinding = true
     }
+
     viewBinding {
         enabled = true
     }
@@ -51,6 +59,24 @@ dependencies {
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
     implementation("com.google.firebase:firebase-database-ktx")
     implementation("com.google.firebase:firebase-storage-ktx")
+    implementation 'com.google.firebase:firebase-firestore-ktx'
+    implementation 'com.firebaseui:firebase-ui-storage:7.2.0'//firebase 이미지 다운로드용
+
+    implementation 'com.github.bumptech.glide:glide:4.11.0'//glide 관련
+    annotationProcessor 'com.github.bumptech.glide:compiler:4.11.0'
 
 
+    // 카카오 sdk 모듈 설정
+    implementation "com.kakao.sdk:v2-all:2.15.0" // 전체 모듈 설치, 2.11.0 버전부터 지원
+    implementation "com.kakao.sdk:v2-user:2.15.0" // 카카오 로그인
+    implementation "com.kakao.sdk:v2-talk:2.15.0" // 친구, 메시지(카카오톡)
+    implementation "com.kakao.sdk:v2-story:2.15.0" // 카카오스토리
+    implementation "com.kakao.sdk:v2-share:2.15.0" // 메시지(카카오톡 공유)
+    implementation "com.kakao.sdk:v2-navi:2.15.0" // 카카오내비
+    implementation "com.kakao.sdk:v2-friend:2.15.0" // 카카오톡 소셜 피커, 리소스 번들 파일 포함
+
+
+    //drawerlayout 관련 설정
+    //implementation 'androidx.navigation:navigation-fragment-ktx:2.7.0'
+    //implementation 'androidx.navigation:navigation-ui-ktx:2.7.0'
 }

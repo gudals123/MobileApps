@@ -5,17 +5,17 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:background="@color/black"
     xmlns:app="http://schemas.android.com/apk/res-auto">
-    
+
     <androidx.appcompat.widget.SearchView
         android:id="@+id/search_view"
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        app:layout_constraintTop_toTopOf="parent"
-        app:iconifiedByDefault="false"
-        app:queryHint="Search"
         android:background="#505050"
-        />
-    
+        app:iconifiedByDefault="false"
+        app:layout_constraintTop_toTopOf="parent"
+        app:queryHint="Search"
+        tools:layout_editor_absoluteX="0dp" />
+
     <LinearLayout
         android:id="@+id/search_option"
         android:layout_width="match_parent"
@@ -27,7 +27,7 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:src="@drawable/btn_like"
+            android:src="@drawable/ic_person"
             android:scaleType="fitCenter"
             android:adjustViewBounds="true"/>
         <ImageButton
@@ -35,7 +35,7 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:src="@drawable/btn_like"
+            android:src="@drawable/ic_tag"
             android:scaleType="fitCenter"
             android:adjustViewBounds="true"/>
 
