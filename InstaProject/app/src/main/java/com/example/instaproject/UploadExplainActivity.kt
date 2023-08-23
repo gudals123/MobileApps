@@ -31,7 +31,6 @@ class UploadExplainActivity : AppCompatActivity() {
         }
 
 
-
         //Back 버튼 클릭 시 사진 선택 화면으로 돌아감
         binding.btnUploadBack.setOnClickListener {
             val intent = Intent(this, UploadActivity::class.java)
