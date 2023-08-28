@@ -16,8 +16,8 @@ import java.util.Date
 class UploadExplainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityUploadExplainBinding
-    var storage : FirebaseStorage? = null
-    var photoUri : Uri? = null
+    var storage: FirebaseStorage? = null
+    var photoUri: Uri? = null
     var bitmap: Bitmap? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -28,12 +28,12 @@ class UploadExplainActivity : AppCompatActivity() {
         storage = FirebaseStorage.getInstance()
 
         var imageType = intent.getIntExtra("typeNum", 1)
-        if(imageType == 1){
+        if (imageType == 1) {
             photoUri = intent.getParcelableExtra<Uri>("path")
             Glide.with(this)
                 .load(photoUri)
                 .into(binding.pageExplainImage)
-        }else if(imageType == 2){
+        } else if (imageType == 2) {
             bitmap = intent.getParcelableExtra<Bitmap>("path")
             Glide.with(this)
                 .load(bitmap)
@@ -54,24 +54,27 @@ class UploadExplainActivity : AppCompatActivity() {
             var imageFileName = "IMAGE_" + timestamp + "_.png"
             var storageRef = storage?.reference?.child("images")?.child(imageFileName)
 
-            if(imageType == 1){
+            if (imageType == 1) {
                 //FileUpload
                 storageRef?.putFile(photoUri!!)?.addOnSuccessListener {
-                    Toast.makeText(this, "업로드 완료",Toast.LENGTH_LONG).show()
+                    Toast.makeText(this, "업로드 완료", Toast.LENGTH_LONG).show()
                 }
 
-            }else if(imageType == 2){
+            } else if (imageType == 2) {
+                //FileUpload
 
-
+                //storageRef?.putBytes(bitmap!!)?.addOnSuccessListener {
+                //    Toast.makeText(this, "업로드 완료", Toast.LENGTH_LONG).show()
+                }
             }
 
-            contentUpload()
-
+            val intent = Intent(this, MainActivity::class.java)
+            startActivity(intent)
         }
 
     }
 
-    fun contentUpload(){
+    fun contentUpload() {
         //Make filename
         var timestamp = SimpleDateFormat("yyyyMMdd_HHmmss").format(Date())
         var imageFileName = "IMAGE_" + timestamp + "_.png"
@@ -80,7 +83,7 @@ class UploadExplainActivity : AppCompatActivity() {
 
         //FileUpload
         storageRef?.putFile(photoUri!!)?.addOnSuccessListener {
-            Toast.makeText(this, "업로드 완료",Toast.LENGTH_LONG).show()
+            Toast.makeText(this, "업로드 완료", Toast.LENGTH_LONG).show()
         }
     }
 }
