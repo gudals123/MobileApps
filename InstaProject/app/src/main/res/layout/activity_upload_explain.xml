@@ -82,7 +82,7 @@
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/insert_tag"
         android:layout_width="match_parent"
-        android:layout_height="40dp"
+        android:layout_height="70dp"
         android:layout_alignParentRight="true"
         android:layout_margin="5dp"
         app:layout_constraintTop_toBottomOf="@+id/page_explain_tag_inform">
