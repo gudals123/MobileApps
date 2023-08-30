@@ -17,8 +17,6 @@ import com.google.android.material.navigation.NavigationView
 import android.content.Intent
 
 class MainActivity : AppCompatActivity() {
-    private lateinit var binding : ActivityMainBinding
-
     private lateinit var binding: ActivityNaviBinding // View Binding 변수 추가
 
 
@@ -42,7 +40,7 @@ class MainActivity : AppCompatActivity() {
                     return@setOnItemSelectedListener true
                 }
                 R.id.action_add -> {
-                    replaceFragment(AddFragment())
+                    startActivity(Intent(this, UploadActivity::class.java))
                     setMenuItemCheckedIcon(menuItem)
                     return@setOnItemSelectedListener true
                 }

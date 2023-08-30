@@ -8,10 +8,13 @@ import androidx.fragment.app.Fragment
 import com.example.instaproject.R
 
 
-
-class AddFragment : Fragment(){
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        var view = LayoutInflater.from(activity).inflate(R.layout.fragment_add,container,false)
+class AddFragment : Fragment() {
+    override fun onCreateView(
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View? {
+        var view = LayoutInflater.from(activity).inflate(R.layout.fragment_add, container, false)
         return view
     }
 }
