@@ -14,14 +14,17 @@ import com.example.instaproject.navigation.NotificationsFragment
 import com.example.instaproject.navigation.SearchFragment
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.android.material.navigation.NavigationView
+import android.content.Intent
 
 class MainActivity : AppCompatActivity() {
+    private lateinit var binding : ActivityMainBinding
 
     private lateinit var binding: ActivityNaviBinding // View Binding 변수 추가
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
         binding = ActivityNaviBinding.inflate(layoutInflater) // View Binding 인스턴스 초기화
         setContentView(binding.root) // root 뷰를 화면에 표시
 
@@ -67,6 +70,7 @@ class MainActivity : AppCompatActivity() {
         supportFragmentManager.beginTransaction()
             .replace(R.id.main_content, fragment)
             .commit()
+        
     }
     private fun setMenuItemCheckedIcon(menuItem: MenuItem) {
         val homeIcon = R.drawable.ic_home2

@@ -13,6 +13,8 @@ dependencyResolutionManagement {
 
         //KakaoSDK repository
         maven { url 'https://devrepo.kakao.com/nexus/content/groups/public/'}
+
+        maven { url "https://www.jitpack.io" }
     }
 }
 rootProject.name = "InstaProject"
