@@ -21,24 +21,25 @@
             android:weightSum="5">
 
             <TextView
+                android:id="@+id/nickname"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_gravity="center"
                 android:layout_weight="4"
                 android:gravity="center"
                 android:paddingLeft="50dp"
-                android:text="User Name"
+                android:text="nickname"
                 android:textColor="@color/white"/>
 
             <ImageButton
-                android:id="@+id/myprofile_setting"
+                android:id="@+id/profile_setting"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:adjustViewBounds="true"
                 android:background="@android:color/transparent"
                 android:scaleType="fitCenter"
-                android:src="@drawable/btn_like" />
+                android:src="@drawable/ic_settings" />
         </LinearLayout>
 
         <LinearLayout
@@ -55,10 +56,11 @@
                 app:cardCornerRadius="100dp">
 
                 <ImageView
+                    android:id="@+id/profile_image"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:scaleType="centerCrop"
-                    android:src="@drawable/user_profile_ex"/>
+                    android:src="@drawable/park"/>
             </androidx.cardview.widget.CardView>
             <LinearLayout
                 android:layout_width="0dp"
@@ -136,6 +138,7 @@
         </LinearLayout>
 
         <TextView
+            android:id="@+id/username"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="my name"
@@ -143,9 +146,10 @@
             android:layout_marginLeft="15dp"
             android:layout_marginTop="5dp"/>
         <TextView
+            android:id="@+id/bio"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="abcdefghijklmnopqrstuvwxyz"
+            android:text="hihi"
             android:layout_marginLeft="15dp"
             android:layout_marginTop="3dp"
             android:layout_marginBottom="30dp"/>
@@ -157,71 +161,10 @@
         android:layout_height="0dp"
         android:orientation="vertical"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-        app:layout_constraintBottom_toTopOf="@id/main_activity_bar"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toBottomOf="@id/myprofile"
+        tools:layout_editor_absoluteX="0dp"
         tools:listitem="@layout/grid_item_list" />
-
-    <LinearLayout
-        android:id="@+id/main_activity_bar"
-        android:layout_width="match_parent"
-        android:layout_height="60dp"
-        android:background="#303030"
-        android:gravity="center_vertical"
-        android:orientation="horizontal"
-        android:weightSum="5"
-        app:layout_constraintBottom_toBottomOf="parent">
-
-        <ImageButton
-            android:id="@+id/btn_home"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:adjustViewBounds="true"
-            android:background="@android:color/transparent"
-            android:scaleType="fitCenter"
-            android:src="@drawable/btn_like" />
-
-        <ImageButton
-            android:id="@+id/btn_search"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:adjustViewBounds="true"
-            android:background="@android:color/transparent"
-            android:scaleType="fitCenter"
-            android:src="@drawable/btn_like" />
-
-        <ImageButton
-            android:id="@+id/btn_posting"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:adjustViewBounds="true"
-            android:background="@android:color/transparent"
-            android:scaleType="fitCenter"
-            android:src="@drawable/btn_like" />
-
-        <ImageButton
-            android:id="@+id/btn_news"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:adjustViewBounds="true"
-            android:background="@android:color/transparent"
-            android:scaleType="fitCenter"
-            android:src="@drawable/btn_like" />
-
-        <ImageButton
-            android:id="@+id/btn_myprofile"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:adjustViewBounds="true"
-            android:background="@android:color/transparent"
-            android:scaleType="fitCenter"
-            android:src="@drawable/btn_like" />
-
-    </LinearLayout>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

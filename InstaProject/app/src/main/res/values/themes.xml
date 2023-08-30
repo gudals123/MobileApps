@@ -1,13 +1,20 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
     <style name="Base.Theme.InstaProject" parent="Theme.Material3.DayNight.NoActionBar">
-        <!-- Customize your light theme here. -->
-        <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
-        <!-- 상태바까지 view를 보여줄 수 있다-->
-        <item name="android:windowDrawsSystemBarBackgrounds">true</item>
-        <!-- 상태바 색상-->
-        <item name="android:statusBarColor">#33D59F9F</item>
+        <!-- Customize your dark theme here. -->
+        <!-- 다크 모드에 대한 설정 추가 -->
+        <item name="android:windowBackground">@color/my_dark_background_color</item>
+        <item name="android:statusBarColor">@color/my_dark_status_bar_color</item>
+        <item name="android:navigationBarColor">@color/my_dark_navigation_bar_color</item>
+        <item name="android:windowLightStatusBar">false</item>
     </style>
 
-    <style name="Theme.InstaProject" parent="Base.Theme.InstaProject" />
+    <style name="Theme.InstaProject" parent="Base.Theme.InstaProject">
+        <!-- Customize your app's dark theme here. -->
+        <!-- 다크 모드에 대한 설정 추가 -->
+    </style>
+    <style name="BottomNavigationView" parent="Widget.MaterialComponents.BottomNavigationView">
+        <item name="android:background">@null</item> <!-- 배경 제거 -->
+        <item name="colorSurface">@color/black</item> <!-- 배경 색상 설정 -->
+    </style>
 </resources>
